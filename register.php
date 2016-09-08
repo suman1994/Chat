@@ -1,3 +1,4 @@
+<?php require_once dirname(__FILE__).'/connection.php'; ?>
 <!DOCTYPE html>
 <html>
 	<body>

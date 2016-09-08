@@ -10,7 +10,8 @@ CREATE DATABASE chat;
 
 USE chat;
 
-GRANT ALL PRIVILEGES ON chat.* to 'chat_user'@'localhost' IDENTIFIED BY 'Test@123'; GRANT ALL PRIVILEGES ON chat.* to 'chat_user'@'%' IDENTIFIED BY 'Test@123';
+GRANT ALL PRIVILEGES ON chat.* to 'chat_user'@'localhost' IDENTIFIED BY 'Test@123'; 
+GRANT ALL PRIVILEGES ON chat.* to 'chat_user'@'%' IDENTIFIED BY 'Test@123';
 
 CREATE TABLE `users` (
 `user_id` INTEGER AUTO_INCREMENT PRIMARY KEY,
