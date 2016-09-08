@@ -1,9 +1,10 @@
 <?php
+//session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "chat";
-
+error_reporting(E_ALL);
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     // set the PDO error mode to exception
