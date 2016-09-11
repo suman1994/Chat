@@ -6,6 +6,36 @@ if(isset($_POST['submit'])) {
     $email    = isset($_POST['email'])      ? trim($_POST['email'])      : "";
     $password = isset($_POST['password'])   ? trim($_POST['password'])   : ""; 
     
+    if($fname == '') {
+		echo 'You Must Enter your First Name';
+		exit();	
+	}	
+	
+	if($lname == '') {
+		echo 'You Must Enter your Last Name';
+		exit();	
+	}	
+    
+    // Remove all illegal characters from email
+$email = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+// Validate e-mail
+if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+    echo("$email is not a valid email address");
+    exit();
+} 
+	
+	if($email == '') {
+		echo 'You Must Enter your Email';
+		exit();	
+	}	
+		
+	if($password == '') {
+		echo 'You Must Enter your Password';
+		exit();	
+	}
+    
+    //Query
     $sql = "INSERT INTO users (first_name, last_name, email, password)
     VALUES ('$fname', '$lname', '$email', '$password')";
     $conn->exec($sql);
