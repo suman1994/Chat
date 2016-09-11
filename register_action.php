@@ -5,6 +5,7 @@ if(isset($_POST['submit'])) {
     $lname    = isset($_POST['last_name'])  ? trim($_POST['last_name'])  : "";      
     $email    = isset($_POST['email'])      ? trim($_POST['email'])      : "";
     $password = isset($_POST['password'])   ? trim($_POST['password'])   : ""; 
+    $password_hash	= md5($password);	
     
     if($fname == '') {
 		echo 'You Must Enter your First Name';
