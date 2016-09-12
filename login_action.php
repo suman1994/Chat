@@ -32,7 +32,7 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
 	$result = $stmt->fetch(PDO::FETCH_NUM);
 	if (isset($result[0])) {
     if($result > 0){
-		echo "Sucessfully Logged In";
+		header('Location: chat.php');
 	}
    	else {
         echo "Wrong Password";
